@@ -3,7 +3,7 @@ from pico2d import *
 
 open_canvas(1280,1024)
 
-character = load_image('Character_sheet5.png')
+character = load_image('Character_sheet6.png')
 background = load_image('TUK_GROUND.png')
 
 
@@ -58,7 +58,10 @@ def draw_events():
 
     if dirx==0 and diry==0:
         framey=4
-        character.clip_draw(framex * 125, 0, 125, 180, x, y, 200, 200)
+        if framex==1:
+            character.clip_draw(150, 52, 62, 64, x, y, 210,170)
+        else :
+            character.clip_draw(framex * 125, 0, 125, 180, x, y, 200, 200)
         return
     elif dirx==0 and diry==1:   #위
         framey=0
